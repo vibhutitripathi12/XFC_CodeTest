@@ -19,9 +19,23 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <img src='./nature-3082832__340.jpg'>
+
+      <div> 
+        <object type="text/html" data="https://raw.githubusercontent.com/vibhutitripathi12/XFC_CodeTest/master/example/embedded_app_lifecycle/test.json" width="1800px" height="600px">
+        </object>
+     </div>x
+    
     </div>
     <script type="text/javascript">
       XFC.Provider.init({ acls: ['http://localprovider.com:8080' ] })
+      XFC.Provider.on('iframeCustomRefresh', function(detail) {
+        // alert("provider app refresh");
+        // alert(detail);
+          console.log("***********Got the Message:", detail);
+          // console.log("***********Frame : ",window.savedProviderAppFrameHandler);
+          // window.savedProviderAppFrameHandler.unmount();
+        });
     </script>
   </body>
 </html>

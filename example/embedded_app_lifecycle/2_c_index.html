@@ -58,9 +58,31 @@
     </div>
     <p>The following example shows 2 embedded frames.  An application can act as a consumer and a provider.
     </p>
+    <button class="button" id="btn-refreshMpage">Mpage Refresh</button>
     <script>
       XFC.Consumer.init()
-      XFC.Consumer.mount(document.body, 'http://localprovider.com:8080/example/embedded_app_lifecycle/2_c_provider_consumer_app.html?url=http://localprovider.com:8080/example/embedded_app_lifecycle/2_c_provider_embedded_app.html', {secret: 'OAuth Header'});
+      window.frame1 = XFC.Consumer.mount(document.body, 'http://localprovider.com:8080/example/embedded_app_lifecycle/2_c_provider_consumer_app.html?url=http://localprovider.com:8080/example/embedded_app_lifecycle/2_c_provider_embedded_app.html', {secret: 'OAuth Header'});
+      var refresh = document.getElementById('btn-refreshMpage');
+      refresh.addEventListener('click', function() {
+          // alert("came to refresh Mpage");
+        window.frame1.trigger('iframeCustomRefresh', {a:4}); 
+        // alert("frame 2 refresh finished"); 
+        window.frame1.load('http://localprovider.com:8080/example/embedded_app_lifecycle/2_c_provider_consumer_app.html?url=http://localprovider.com:8080/example/embedded_app_lifecycle/2_c_provider_embedded_app.html');
+        // alert("frame 1 refresh finished"); 
+
+        // window.frame2.unmount();
+        // window.frame2.mount();
+      //   window.frame1.on('xfc.provider.RefreshComplete', function(refreshcomplete) {
+      //   alert(refreshcomplete);
+      // });
+      });
+     
+      console.log('Acquired frame 1 reference :', window.frame1);
+      console.log('URL being loaded in frame 1 :',window.frame1.src); //undefined.
+      // window.frame1.on('xfc.authorized', function(){ 
+      //   console.log('Frame 1 authorized.Sending message to Provider...');
+      //   window.frame1.trigger('iframeCustomRefresh', {a:1}); 
+      // });
     </script>
   </body>
 </html>
