@@ -39,7 +39,7 @@
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
     "jsdoc": "^3.4.0",
-    "jsdom": "9.6.0",
+    "jsdom": "16.5.0",
     "jsdom-global": "2.1.0",
     "matchdep": "^1.0.1",
     "mocha": "^3.1.0",
